@@ -1,5 +1,16 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <p>{{message.ABOUT}}</p>
   </div>
 </template>
+
+
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import Message from '@/model/Message.ts';
+
+@Component
+export default class About extends Vue {
+  @Prop() private message = Message;
+}
+</script>
