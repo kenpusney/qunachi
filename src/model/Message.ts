@@ -19,4 +19,6 @@ export default {
 
     SITE_TITLE: '去哪儿吃？',
     ABOUT_TITLE: '关于：去哪儿吃',
+
+    SEND_US_FEEDBACK: '请告诉我们您的意见/反馈',
 };
