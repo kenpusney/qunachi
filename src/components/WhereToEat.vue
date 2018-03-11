@@ -63,7 +63,7 @@ export default class WhereToEat extends Vue {
   private mounted() {
     const storedPlaces = localStorage.getItem('places');
     const storedHistory = localStorage.getItem('history');
-
+    ka({action: 'enter'});
     this.places = storedPlaces ? JSON.parse(storedPlaces) : [];
     this.history = storedHistory ? this.parseHistory(storedHistory) : [];
   }
@@ -88,6 +88,7 @@ export default class WhereToEat extends Vue {
       this.showWarning = true;
       return;
     } else {
+      ka({place: place.name, action: 'show-suggestion'});
       this.suggestedPlace = place;
       this.showSuggestion = true;
       this.suggestionMesssage = Message.SUGGEST_TO_GO(place.name);
