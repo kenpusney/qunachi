@@ -9,7 +9,9 @@ export default {
     CLEAR_HISTORY: '清空历史数据',
     HINT_ADD_PLACE: '在这里添加你想要去的地方',
     ADD_BUTTON: '添加',
-    SUGGEST_TO_GO: '我们建议你去：',
+    SUGGEST_TO_GO(place: string): string {
+        return `我们建议你去：<strong>${place}</strong>`;
+    },
 
 
     TAB_HOME: '首页',
@@ -21,4 +23,11 @@ export default {
     ABOUT_TITLE: '关于：去哪儿吃',
 
     SEND_US_FEEDBACK: '请告诉我们您的意见/反馈',
+
+    I_WILL_GO: '去',
+    I_WILL_NOT_GO: '不去',
+
+    DIALOG_HEADER_WARNING: '注意！',
+
+    DIALOG_HEADER_SUGGESTION: '推荐',
 };
