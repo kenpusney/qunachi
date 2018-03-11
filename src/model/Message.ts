@@ -16,4 +16,7 @@ export default {
     TAB_ABOUT: '关于',
 
     ABOUT: '我们可以告诉你去哪儿吃！',
+
+    SITE_TITLE: '去哪儿吃？',
+    ABOUT_TITLE: '关于：去哪儿吃',
 };
