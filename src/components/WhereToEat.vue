@@ -76,6 +76,7 @@ export default class WhereToEat extends Vue {
 
   private addPlace(place: string) {
     if (place && this.places.every((p) => p.name !== place)) {
+      ka({place, action: 'add-place'});
       this.places.push(new Place(place));
     }
     localStorage.setItem('places', JSON.stringify(this.places));
@@ -95,6 +96,7 @@ export default class WhereToEat extends Vue {
 
   private logHistory() {
     if (this.suggestedPlace !== undefined) {
+      ka({place: this.suggestedPlace.name, action: 'visit-place'});
       this.history.unshift(new VisitHistory(this.suggestedPlace.name, new Date()));
       localStorage.setItem('history', JSON.stringify(this.history));
       this.suggestedPlace = undefined;
