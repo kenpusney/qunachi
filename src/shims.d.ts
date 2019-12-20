@@ -3,4 +3,4 @@ declare module '*.vue' {
   export default Vue;
 }
 
-declare function ka(param: { [key:string]: string}): any
+declare module 'qqmap';

@@ -21,6 +21,7 @@ export default {
 
     SITE_TITLE: '去哪儿吃？',
     ABOUT_TITLE: '关于：去哪儿吃',
+    SURROUNDINGS_TITLE: '查看周边',
 
     SEND_US_FEEDBACK: '请告诉我们您的意见/反馈',
 

@@ -63,7 +63,6 @@ export default class WhereToEat extends Vue {
   private mounted() {
     const storedPlaces = localStorage.getItem('places');
     const storedHistory = localStorage.getItem('history');
-    ka({action: 'enter'});
     this.places = storedPlaces ? JSON.parse(storedPlaces) : [];
     this.history = storedHistory ? this.parseHistory(storedHistory) : [];
   }
@@ -76,7 +75,6 @@ export default class WhereToEat extends Vue {
 
   private addPlace(place: string) {
     if (place && this.places.every((p) => p.name !== place)) {
-      ka({place, action: 'add-place'});
       this.places.push(new Place(place));
     }
     localStorage.setItem('places', JSON.stringify(this.places));
@@ -88,7 +86,6 @@ export default class WhereToEat extends Vue {
       this.showWarning = true;
       return;
     } else {
-      ka({place: place.name, action: 'show-suggestion'});
       this.suggestedPlace = place;
       this.showSuggestion = true;
       this.suggestionMesssage = Message.SUGGEST_TO_GO(place.name);
@@ -97,7 +94,6 @@ export default class WhereToEat extends Vue {
 
   private logHistory() {
     if (this.suggestedPlace !== undefined) {
-      ka({place: this.suggestedPlace.name, action: 'visit-place'});
       this.history.unshift(new VisitHistory(this.suggestedPlace.name, new Date()));
       localStorage.setItem('history', JSON.stringify(this.history));
       this.suggestedPlace = undefined;
